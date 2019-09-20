@@ -66,14 +66,14 @@ class Input extends PureComponent {
 
     return (
       <ul className={cx('tag-list')}>
-        {getTags(tags, onTagRemove, readOnly, disabled, texts.labelRemove)}
+        {/* {getTags(tags, onTagRemove, readOnly, disabled, texts.labelRemove)} */}
         <li className={cx('tag-item')}>
           <input
             type="text"
             disabled={disabled}
             ref={inputRef}
             className={cx('search')}
-            placeholder={texts.placeholder || 'Choose...'}
+            placeholder={tags.length === 0 ? texts.placeholder || 'Choose...' : `${tags.length} selected`}
             onKeyDown={onKeyDown}
             onChange={this.handleInputChange}
             onFocus={onFocus}
